@@ -1,0 +1,27 @@
+/* Paleta de colores
+Rojo intenso #FF33737
+Rojo oscuro #8B0A0A
+Negro
+Gris oscuro #333333 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: whitesmoke; /* Temporal para poder ver */
+    background: linear-gradient(to bottom, #8B0A0A, #000000);
+    background-attachment: fixed; /* Para que el fondo no se repita */
+}
+
+nav ul li a{
+    color: white;
+    background-color: #000000;
+}
+
+.portada h1{
+    color: whitesmoke;
+    font-family: "Open Sans", system-ui;
+}
