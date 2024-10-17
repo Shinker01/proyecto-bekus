@@ -16,12 +16,113 @@ body {
     background-attachment: fixed; /* Para que el fondo no se repita */
 }
 
-nav ul li a{
+/* Menu de navegacion */
+.menu {
+    display: grid;
+    grid-template-columns: 150px auto;
+    align-items: center;
+}
+    
+
+.menu-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+        
+nav ul a{
     color: white;
     background-color: #000000;
 }
 
+/* Botón hamburguesa (oculto por defecto en escritorio) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+/* Portada */
 .portada h1{
     color: whitesmoke;
-    font-family: "Open Sans", system-ui;
+}
+
+
+.portada {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    place-items: center;
+}
+    
+.img-port {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+}
+
+.title-port {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+}
+
+/* Carousel */
+.carousel-item img {
+    height: 150vh;         /* Ajusta la altura del carrusel */
+    object-fit: cover;      /* Mantiene la proporción de la imagen sin deformarla */
+    width: 100%;            /* Asegura que ocupe todo el ancho disponible */
+}
+
+.boton-carousel {
+    display: grid;
+    place-items: center; /* Centrar el botón */
+}
+
+.boton-carousel button{
+    padding: 10px 20px;
+    background-color: #8B0A0A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.boton-carousel button:hover{
+    background-color: #000000;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .menu {
+        grid-template-columns: 1fr; /* Logo y hamburguesa en una fila */
+    }
+
+    .menu-links {
+        display: none; /* Ocultar los enlaces inicialmente */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #8B0A0A;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .menu-links.active {
+        display: flex; /* Mostrar enlaces cuando se hace clic en el botón */
+    }
+
+    .hamburger {
+        display: block; /* Mostrar botón en móviles */
+    }
 }
